@@ -1,7 +1,8 @@
 // import { Shortcuts, UnRecursiveTemplate } from '@tarojs/shared/dist/template'
 
-import { UnRecursiveTemplate, Shortcuts } from "@tarojs/shared";
+import { Shortcuts } from "@tarojs/shared";
 import type { IOptions } from "./index";
+import { UnRecursiveTemplate } from "./type";
 
 export class Template extends UnRecursiveTemplate {
   pluginOptions: IOptions;
@@ -113,7 +114,7 @@ export class Template extends UnRecursiveTemplate {
     return res;
   };
 
-  buildPageTemplate = (baseTempPath: string, page) => {
+  buildPageTemplate = (baseTempPath: string, page?: any) => {
     let pageMetaTemplate = "";
     const pageConfig = page?.content;
 
