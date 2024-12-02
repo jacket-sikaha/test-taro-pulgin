@@ -27,7 +27,8 @@
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
     "dev:quickapp": "npm run build:quickapp -- --watch",
-    "test": "jest"
+    "test": "jest",
+    "a": "pnpm --filter ./test/*"
   },
   "browserslist": [
     "last 3 versions",
@@ -46,7 +47,7 @@
     "@tarojs/plugin-platform-qq": "3.6.18",
     "@tarojs/plugin-platform-swan": "3.6.18",
     "@tarojs/plugin-platform-tt": "3.6.18",
-    "@tarojs/plugin-platform-weapp": "3.6.18",
+    "@tarojs/plugin-platform-weapp": "workspace:*",
     "@tarojs/react": "3.6.18",
     "@tarojs/runtime": "3.6.18",
     "@tarojs/shared": "3.6.18",
