@@ -17,7 +17,14 @@ export default defineConfig(async (merge, { command, mode }) => {
     },
     sourceRoot: "src",
     outputRoot: "dist",
-    plugins: ["tttt"],
+    plugins: [
+      [
+        "@tarojs/tttt",
+        {
+          arg0: "1111111111111111",
+        },
+      ],
+    ],
     defineConstants: {},
     copy: {
       patterns: [],

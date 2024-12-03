@@ -2,7 +2,6 @@ const _true = 'true'
 const _false = 'false'
 const _empty = ''
 const _zero = '0'
-const _object = '{}'
 
 export const components = {
   // ======== 调整属性 ========
@@ -17,9 +16,7 @@ export const components = {
     'user-select': _false
   },
   Text: {
-    'user-select': _false,
-    overflow: 'visible',
-    'max-lines': ''
+    'user-select': _false
   },
   Map: {
     polygons: '[]',
@@ -32,7 +29,6 @@ export const components = {
     'show-compass': _false,
     'show-scale': _false,
     'enable-overlooking': _false,
-    'enable-auto-max-overlooking': _false,
     'enable-zoom': _true,
     'enable-scroll': _true,
     'enable-rotate': _false,
@@ -40,16 +36,10 @@ export const components = {
     'enable-traffic': _false,
     'enable-poi': _true,
     'enable-building': _true,
-    setting: _object,
+    setting: '[]',
     bindLabelTap: _empty,
     bindRegionChange: _empty,
     bindPoiTap: _empty,
-    bindPolylineTap: _empty,
-    bindAbilitySuccess: _empty,
-    bindAbilityFailed: _empty,
-    bindAuthSuccess: _empty,
-    bindInterpolatePoint: _empty,
-    bindError: _empty,
     bindAnchorPointTap: _empty
   },
   Button: {
@@ -90,7 +80,7 @@ export const components = {
   },
   Picker: {
     'header-text': _empty,
-    level: 'region'
+    'level': 'region'
   },
   PickerView: {
     'immediate-change': _false,
@@ -114,7 +104,6 @@ export const components = {
     'enable-flex': _false,
     'scroll-anchoring': _false,
     enhanced: _false,
-    'using-sticky': _false,
     'paging-enabled': _false,
     'enable-passive': _false,
     'refresher-enabled': _false,
@@ -137,7 +126,7 @@ export const components = {
     'refresher-two-level-enabled': _false,
     'refresher-two-level-triggered': _false,
     'refresher-two-level-threshold': '150',
-    'refresher-two-level-close-threshold': '80',
+    'refresher-two-level-close-threshold':'80',
     'refresher-two-level-scroll-enabled': _false,
     'refresher-ballistic-refresh-enabled': _false,
     'refresher-two-level-pinned': _false,
@@ -155,7 +144,6 @@ export const components = {
   },
   StickySection: {
     'push-pinned-header': _true,
-    padding: '[0, 0, 0, 0]'
   },
   GridView: {
     type: "'aligned'",
@@ -163,35 +151,9 @@ export const components = {
     'max-cross-axis-extent': _zero,
     'main-axis-gap': _zero,
     'cross-axis-gap': _zero,
-    padding: '[0, 0, 0, 0]'
   },
-  GridBuilder: {
-    type: "'aligned'",
-    list: '[]',
-    'cross-axis-count': '2',
-    'max-cross-axis-extent': _zero,
-    'main-axis-gap': _zero,
-    'cross-axis-gap': _zero,
-    padding: '[0, 0, 0, 0]',
-    bindItemBuild: _empty,
-    bindItemDispose: _empty
-  },
-  ListView: {
-    padding: '[0, 0, 0, 0]'
-  },
-  ListBuilder: {
-    list: '[]',
-    type: 'static',
-    padding: '[0, 0, 0, 0]',
-    'child-count': _empty,
-    'child-height': _empty,
-    bindItemBuild: _empty,
-    bindItemDispose: _empty
-  },
-  StickyHeader: {
-    'offset-top': '0',
-    padding: '[0, 0, 0, 0]'
-  },
+  ListView: {},
+  StickyHeader: {},
   Swiper: {
     'snap-to-edge': _false,
     'easing-function': "'default'"
@@ -223,18 +185,12 @@ export const components = {
     'auto-pause-if-navigate': _true,
     'auto-pause-if-open-native': _true,
     'picture-in-picture-mode': '[]',
-    'enable-auto-rotation': _false,
-    'referrer-policy': "'no-referrer'",
-    'enable-casting': _false,
     bindstatechange: _empty,
     bindfullscreenchange: _empty,
     bindnetstatus: _empty,
     bindAudioVolumeNotify: _empty,
     bindEnterPictureInPicture: _empty,
-    bindLeavePictureInPicture: _empty,
-    bindCastingUserSelect: _empty,
-    bindCastingStateChange: _empty,
-    bindCastingInterrupt: _empty
+    bindLeavePictureInPicture: _empty
   },
   Video: {
     title: _empty,
@@ -378,7 +334,7 @@ export const components = {
   NavigationBar: {
     title: _empty,
     loading: _false,
-    'front-color': "'#000000'",
+    'front-color': _empty,
     'background-color': _empty,
     'color-animation-duration': _zero,
     'color-animation-timing-func': "'linear'"
@@ -388,12 +344,10 @@ export const components = {
     'background-color': _empty,
     'background-color-top': _empty,
     'background-color-bottom': _empty,
-    'root-background-color': _empty,
     'scroll-top': "''",
     'scroll-duration': '300',
     'page-style': "''",
     'root-font-size': "''",
-    'page-orientation': "''",
     bindResize: _empty,
     bindScroll: _empty,
     bindScrollDone: _empty
@@ -435,45 +389,19 @@ export const components = {
     'easing-function': "'ease-out'"
   },
   KeyboardAccessory: {},
-  RootPortal: {
-    enable: _true
-  },
+  RootPortal: {},
   ChannelLive: {
-    'feed-id': _empty,
-    'finder-user-name': _empty
+    feedId: _empty,
+    finderUserName: _empty
   },
   ChannelVideo: {
-    'feed-id': _empty,
-    'finder-user-name': _empty,
-    'feed-token': _empty,
+    feedId: _empty,
+    finderUserName: _empty,
     autoplay: _false,
     loop: _false,
     muted: _false,
-    'object-fit': "'contain'",
+    objectFit: "'contain'",
     bindError: _empty
   },
-  Snapshot: {
-    mode: "'view'",
-  },
-  Span: {},
-  OpenContainer: {
-    transitionType: "'fade'",
-    transitionDuration: '300',
-    closedColor: "'white'",
-    closedElevation: _zero,
-    closeBorderRadius: _zero,
-    middleColor: _empty,
-    openColor: "'white'",
-    openElevation: _zero,
-    openBorderRadius: _zero
-  },
-  DraggableSheet: {
-    initialChildSize: '0.5',
-    minChildSize: '0.25',
-    maxChildSize: '1.0',
-    snap: _false,
-    snapSizes: '[]'
-  },
-  NestedScrollHeader: {},
-  NestedScrollBody: {},
+  Snapshot: {}
 }
