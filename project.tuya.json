@@ -1,0 +1,14 @@
+{
+  "projectname": "ty",
+  "i18n": false,
+  "description": "",
+  "baseversion": "2.10.3",
+  "dependencies": {
+    "BaseKit": "3.0.1",
+    "MiniKit": "3.0.0",
+    "BizKit": "3.0.1"
+  },
+  "compileType": "miniprogram",
+  "compatible": ["wx"],
+  "asd": 123
+}
