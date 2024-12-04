@@ -18,6 +18,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     sourceRoot: "src",
     outputRoot: "dist",
     plugins: [
+      // "@tarojs/plugin-html",
       [
         "@tarojs/tttt",
         {
@@ -35,6 +36,8 @@ export default defineConfig(async (merge, { command, mode }) => {
       type: "webpack5",
       prebundle: {
         enable: false,
+        force: true,
+        exclude: ["@taro/components"],
       },
     },
     cache: {

@@ -4,3 +4,4 @@ dist
 .swc
 .DS_Store
 test/taro-platform-weapp/src copy
+plugin-platform-ty/

@@ -45,6 +45,7 @@
     "@tarojs/helper": "3.6.18",
     "@tarojs/plugin-framework-react": "3.6.18",
     "@tarojs/plugin-platform-alipay": "3.6.18",
+    "@tarojs/plugin-html": "3.6.18",
     "@tarojs/plugin-platform-h5": "3.6.18",
     "@tarojs/plugin-platform-jd": "3.6.18",
     "@tarojs/plugin-platform-qq": "3.6.18",
@@ -89,5 +90,12 @@
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "typescript": "^5.1.0",
     "webpack": "5.78.0"
+  },
+  "peerDependencies": {
+    "@tarojs/taro": ">=3",
+    "@tarojs/components": ">=3",
+    "@tarojs/react": ">=3",
+    "react": ">=16.13.0",
+    "react-dom": ">=16.13.0"
   }
 }
