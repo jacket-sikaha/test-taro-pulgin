@@ -5,8 +5,8 @@ import { Template } from "./template";
 
 import type { IOptions } from "./index";
 
-const PACKAGE_NAME = "@tarojs/tttt";
-// const PACKAGE_NAME = "@tarojs/plugin-platform-weapp";
+// const PACKAGE_NAME = "@tarojs/tttt";
+const PACKAGE_NAME = "@tarojs/plugin-platform-weapp";
 
 export default class Weapp extends TaroPlatformBase {
   template: Template;
@@ -16,13 +16,13 @@ export default class Weapp extends TaroPlatformBase {
   runtimePath = `${PACKAGE_NAME}/dist/runtime`;
   taroComponentsPath = `${PACKAGE_NAME}/dist/components-react`;
   fileType = {
-    templ: ".wxml",
-    style: ".wxss",
-    // templ: ".tyml",
-    // style: ".tyss",
+    // templ: ".wxml",
+    // style: ".wxss",
+    templ: ".tyml",
+    style: ".tyss",
     config: ".json",
     script: ".js",
-    xs: ".wxs",
+    xs: ".sjs",
   };
   protected generateProjectConfig(
     src: string,

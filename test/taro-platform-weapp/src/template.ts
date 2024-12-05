@@ -6,14 +6,14 @@ export class Template extends UnRecursiveTemplate {
   pluginOptions: IOptions;
   supportXS = true;
   Adapter = {
-    if: "wx:if",
-    else: "wx:else",
-    elseif: "wx:elif",
-    for: "wx:for",
-    forItem: "wx:for-item",
-    forIndex: "wx:for-index",
-    key: "wx:key",
-    xs: "wxs",
+    if: "ty:if",
+    else: "ty:else",
+    elseif: "ty:elif",
+    for: "ty:for",
+    forItem: "ty:for-item",
+    forIndex: "ty:for-index",
+    key: "ty:key",
+    xs: "sjs",
     type: "weapp",
   };
 
@@ -23,7 +23,7 @@ export class Template extends UnRecursiveTemplate {
   }
 
   buildXsTemplate() {
-    return '<wxs module="xs" src="./utils.wxs" />';
+    return '<sjs module="xs" src="./utils.sjs" />';
   }
 
   replacePropName(
@@ -77,7 +77,7 @@ export class Template extends UnRecursiveTemplate {
 
       const target = `
     <keyboard-accessory style="{{i.cn[0].st}}" class="{{i.cn[0].cl}}" bindtap="eh"  id="{{i.cn[0].uid||i.cn[0].sid}}" data-sid="{{i.cn[0].sid}}">
-      <block wx:for="{{i.cn[0].cn}}" wx:key="sid">
+      <block ty:for="{{i.cn[0].cn}}" ty:key="sid">
         <template is="{{${xs}}}" data="{{i:item,c:c+1,l:xs.f(l,item.${Shortcuts.NodeName})}}" />
       </block>
     </keyboard-accessory>
