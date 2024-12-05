@@ -20,7 +20,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     plugins: [
       // "@tarojs/plugin-html",
       [
-        "@tarojs/tttt",
+        "@tarojs/tuya",
         {
           arg0: "1111111111111111",
         },
@@ -37,7 +37,6 @@ export default defineConfig(async (merge, { command, mode }) => {
       prebundle: {
         enable: false,
         force: true,
-        exclude: ["@taro/components"],
       },
     },
     cache: {

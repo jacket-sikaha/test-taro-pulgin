@@ -1,9 +1,9 @@
-import Weapp from "./program";
+import Tuya from "./program";
 
 import type { IPluginContext } from "@tarojs/service";
 
 // 让其它平台插件可以继承此平台
-export { Weapp };
+export { Tuya };
 
 export interface IOptions {
   enablekeyboardAccessory?: boolean;
@@ -14,7 +14,7 @@ export default (ctx: IPluginContext, options: IOptions) => {
     name: "tttt",
     useConfigName: "mini",
     async fn({ config }) {
-      const program = new Weapp(ctx, config, options || {});
+      const program = new Tuya(ctx, config, options || {});
       await program.start();
     },
   });

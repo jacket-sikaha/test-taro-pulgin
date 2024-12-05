@@ -2,10 +2,10 @@ import { processApis } from "@tarojs/shared";
 
 import { needPromiseApis } from "./apis-list";
 
-declare const wx: any;
+declare const ty: any;
 
 export function initNativeApi(taro) {
-  processApis(taro, wx, {
+  processApis(taro, ty, {
     needPromiseApis,
     modifyApis(apis) {
       // fix https://github.com/NervJS/taro/issues/9899
@@ -28,7 +28,7 @@ export function initNativeApi(taro) {
       };
     },
   });
-  taro.cloud = wx.cloud;
+  taro.cloud = ty.cloud;
   taro.getTabBar = function (pageCtx) {
     if (typeof pageCtx?.getTabBar === "function") {
       return pageCtx.getTabBar()?.$taroInstances;

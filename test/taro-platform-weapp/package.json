@@ -1,5 +1,5 @@
 {
-  "name": "@tarojs/tttt",
+  "name": "@tarojs/tuya",
   "version": "3.6.18",
   "description": "微信小程序平台插件",
   "author": "O2Team",
@@ -11,7 +11,8 @@
   ],
   "files": [
     "index.js",
-    "dist"
+    "dist",
+    "types"
   ],
   "scripts": {
     "prod": "pnpm run build",

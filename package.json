@@ -52,7 +52,7 @@
     "@tarojs/plugin-platform-swan": "3.6.18",
     "@tarojs/plugin-platform-tt": "3.6.18",
     "@tarojs/plugin-platform-weapp": "3.6.18",
-    "@tarojs/tttt": "workspace:*",
+    "@tarojs/tuya": "workspace:*",
     "@tarojs/react": "3.6.18",
     "@tarojs/runtime": "3.6.18",
     "@tarojs/shared": "3.6.18",

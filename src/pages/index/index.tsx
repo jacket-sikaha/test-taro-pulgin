@@ -19,7 +19,22 @@ import "./index.less";
 export default function Index() {
   return (
     <View className="index">
-      <Text>Hello world!</Text>
+      <Text
+        onClick={() => {
+          Taro.showModal({
+            title: "提示",
+            content: "这是一个提示",
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                console.log("用户点击确定");
+              }
+            },
+          });
+        }}
+      >
+        Hello world!
+      </Text>
       <button
         onClick={() => {
           Taro.navigateTo({ url: "/pages/test/index" });
@@ -40,7 +55,12 @@ export default function Index() {
         <Progress percent={60} strokeWidth={2} active />
         <Progress percent={80} strokeWidth={2} active activeColor="blue" />
       </View>
-      <View className="page-section">
+      <View
+        className="page-section"
+        onClick={() => {
+          Taro.showToast({ title: "点击了" });
+        }}
+      >
         <Text>默认样式</Text>
         <Checkbox value="选中" checked>
           选中
