@@ -1,0 +1,51 @@
+{
+  "name": "@tarojs/shared",
+  "version": "4.0.7",
+  "description": "Taro utils internal use.",
+  "author": "O2Team",
+  "license": "MIT",
+  "browser": "dist/index.js",
+  "main:h5": "dist/shared.esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/shared.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NervJS/taro.git"
+  },
+  "scripts": {
+    "prod": "pnpm run build",
+    "prebuild": "pnpm run clean",
+    "clean": "rimraf --impl=move-remove ./dist",
+    "build": "pnpm run rollup --environment NODE_ENV:production",
+    "dev": "pnpm run rollup --environment NODE_ENV:development -w",
+    "rollup": "rollup --config rollup.config.ts --configPlugin typescript",
+    "test": "jest"
+  },
+  "bugs": {
+    "url": "https://github.com/NervJS/taro/issues"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@tarojs/service": "^4.0.8",
+    "@tarojs/shared": "^4.0.8",
+    "@types/node": "^18.15.11",
+    "rollup": "^4.16.4",
+    "rollup-plugin-node-externals": "^7.1.1",
+    "tslib": "^2.8.1",
+    "lodash": "^4.17.21",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@tarojs/service": "^4.0.8",
+    "@tarojs/shared": "^4.0.8"
+  }
+}

@@ -4,10 +4,9 @@ import { components } from "./components";
 import { Template } from "./template";
 
 import type { IOptions } from "./index";
-import path from "path";
 
-const PACKAGE_NAME = "@tarojs/tttt";
-// const PACKAGE_NAME = "@tarojs/plugin-platform-weapp";
+// const PACKAGE_NAME = "@tarojs/tttt";
+const PACKAGE_NAME = "@tarojs/plugin-platform-weapp";
 
 export default class Tuya extends TaroPlatformBase {
   template: Template;
@@ -28,12 +27,13 @@ export default class Tuya extends TaroPlatformBase {
     dist = "project.tuya.json"
   ): void {
     if (this.config.isBuildNativeComp) return;
-    console.log("src", src);
+
     this.ctx.generateProjectConfig({
       srcConfigName: src,
       distConfigName: dist,
     });
   }
+
   /**
    * 1. setupTransaction - init
    * 2. setup

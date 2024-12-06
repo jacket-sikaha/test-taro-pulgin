@@ -5,3 +5,5 @@ dist
 .DS_Store
 test/taro-platform-weapp/src copy
 plugin-platform-ty/
+test/taro-platform-weapp/asd.ts
+asd.ts
