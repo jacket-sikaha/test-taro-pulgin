@@ -14,31 +14,16 @@ export class Template extends UnRecursiveTemplate {
     forIndex: "ty:for-index",
     key: "ty:key",
     xs: "sjs",
-    type: "weapp",
+    type: "ty",
   };
-
-  transferComponents: Record<string, Record<string, string>> = {};
 
   constructor(pluginOptions?: IOptions) {
     super();
     this.pluginOptions = pluginOptions || {};
-    this.nestElements.set("root-portal", 3);
   }
 
   buildXsTemplate() {
     return '<sjs module="xs" src="./utils.sjs" />';
-  }
-
-  createMiniComponents(components): any {
-    const result = super.createMiniComponents(components);
-
-    // PageMeta & NavigationBar
-    this.transferComponents["page-meta"] = result["page-meta"];
-    this.transferComponents["navigation-bar"] = result["navigation-bar"];
-    delete result["page-meta"];
-    delete result["navigation-bar"];
-
-    return result;
   }
 
   replacePropName(
@@ -111,40 +96,5 @@ export class Template extends UnRecursiveTemplate {
     }
 
     return res;
-  };
-
-  buildPageTemplate = (baseTempPath: string, page?) => {
-    let pageMetaTemplate = "";
-    const pageConfig = page?.content;
-
-    if (pageConfig?.enablePageMeta) {
-      const getComponentAttrs = (componentName: string, dataPath: string) => {
-        return Object.entries(this.transferComponents[componentName]).reduce(
-          (sum, [key, value]) => {
-            sum += `${key}="${
-              value === "eh" ? value : `{{${value.replace("i.", dataPath)}}}`
-            }" `;
-            return sum;
-          },
-          ""
-        );
-      };
-      const pageMetaAttrs = getComponentAttrs("page-meta", "pageMeta.");
-      const navigationBarAttrs = getComponentAttrs(
-        "navigation-bar",
-        "navigationBar."
-      );
-
-      pageMetaTemplate = `
-<sjs module="xs" src="${baseTempPath.replace("base.tyml", "utils.sjs")}" />
-<page-meta data-sid="{{pageMeta.sid}}" ${pageMetaAttrs}>
-  <navigation-bar ${navigationBarAttrs}/>
-</page-meta>`;
-    }
-
-    const template = `<import src="${baseTempPath}"/>${pageMetaTemplate}
-<template is="taro_tmpl" data="{{${this.dataKeymap("root:root")}}}" />`;
-
-    return template;
   };
 }

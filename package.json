@@ -20,7 +20,7 @@
     "build:jd": "taro build --type jd",
     "build:quickapp": "taro build --type quickapp",
     "dev:weapp": "npm run build:weapp -- --watch",
-    "asd": "pnpm a build && npm run build:tttt -- --watch",
+    "asd": " pnpm a build && npm run build:tttt -- --watch",
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:tt": "npm run build:tt -- --watch",
@@ -31,7 +31,8 @@
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "test": "jest",
     "ddd": "rimraf ./node_modules",
-    "a": "pnpm --filter ./test/taro-platform-weapp"
+    "a": "pnpm --filter ./test/taro-platform-weapp",
+    "aa": "pnpm --filter ./test/shared"
   },
   "browserslist": [
     "last 3 versions",
@@ -52,7 +53,7 @@
     "@tarojs/plugin-platform-swan": "3.6.18",
     "@tarojs/plugin-platform-tt": "3.6.18",
     "@tarojs/plugin-platform-weapp": "3.6.18",
-    "@tarojs/tuya": "workspace:*",
+    "@tarojs/tttt": "workspace:*",
     "@tarojs/react": "3.6.18",
     "@tarojs/runtime": "3.6.18",
     "@tarojs/shared": "3.6.18",

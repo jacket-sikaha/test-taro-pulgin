@@ -20,7 +20,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     plugins: [
       // "@tarojs/plugin-html",
       [
-        "@tarojs/tuya",
+        "@tarojs/tttt",
         {
           arg0: "1111111111111111",
         },

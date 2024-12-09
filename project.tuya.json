@@ -9,6 +9,5 @@
     "BizKit": "3.0.1"
   },
   "compileType": "miniprogram",
-  "compatible": ["wx"],
   "asd": 123
 }
