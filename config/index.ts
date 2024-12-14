@@ -1,5 +1,6 @@
 import { defineConfig, type UserConfigExport } from "@tarojs/cli";
 import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
+import { UnifiedWebpackPluginV5 } from "weapp-tailwindcss/webpack";
 import devConfig from "./dev";
 import prodConfig from "./prod";
 
@@ -17,15 +18,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     },
     sourceRoot: "src",
     outputRoot: "dist",
-    plugins: [
-      // "@tarojs/plugin-html",
-      [
-        "@tarojs/tttt",
-        {
-          arg0: "1111111111111111",
-        },
-      ],
-    ],
+    plugins: ["@tarojs/tttt", "@tarojs/plugin-html"],
     defineConstants: {},
     copy: {
       patterns: [],
@@ -36,7 +29,6 @@ export default defineConfig(async (merge, { command, mode }) => {
       type: "webpack5",
       prebundle: {
         enable: false,
-        force: true,
       },
     },
     cache: {
@@ -62,8 +54,27 @@ export default defineConfig(async (merge, { command, mode }) => {
           },
         },
       },
+      miniCssExtractPluginOption: {
+        ignoreOrder: true,
+      },
       webpackChain(chain) {
         chain.resolve.plugin("tsconfig-paths").use(TsconfigPathsPlugin);
+        chain.merge({
+          plugin: {
+            install: {
+              plugin: UnifiedWebpackPluginV5,
+              args: [
+                {
+                  appType: "taro",
+                  injectAdditionalCssVarScope: true,
+                },
+              ],
+            },
+          },
+        });
+      },
+      optimizeMainPackage: {
+        enable: true,
       },
     },
     h5: {

@@ -19,6 +19,7 @@ import "./index.less";
 export default function Index() {
   return (
     <View className="index">
+      <div className=" bg-purple-400 text-[#48efa4]">11111111</div>
       <Text
         onClick={() => {
           Taro.showModal({

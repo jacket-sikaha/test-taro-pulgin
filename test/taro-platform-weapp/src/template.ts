@@ -14,12 +14,13 @@ export class Template extends UnRecursiveTemplate {
     forIndex: "ty:for-index",
     key: "ty:key",
     xs: "sjs",
-    type: "ty",
+    type: "weapp",
   };
 
   constructor(pluginOptions?: IOptions) {
     super();
     this.pluginOptions = pluginOptions || {};
+    console.log("pluginOptions-----------", pluginOptions);
   }
 
   buildXsTemplate() {

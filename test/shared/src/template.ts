@@ -712,7 +712,7 @@ export class UnRecursiveTemplate extends BaseTemplate {
 
   public buildTemplate = (componentConfig: ComponentConfig) => {
     this.componentConfig = componentConfig;
-    console.log("componentConfig", componentConfig);
+    console.log("componentConfig", { ...componentConfig });
     if (!this.miniComponents) {
       this.componentsAlias = getComponentsAlias(this.internalComponents);
       this.miniComponents = this.createMiniComponents(this.internalComponents);
@@ -722,7 +722,6 @@ export class UnRecursiveTemplate extends BaseTemplate {
         ? componentConfig.includes.has(c)
         : true
     );
-
     let template = this.buildBaseTemplate();
     for (let i = 0; i < this.baseLevel; i++) {
       template += this.supportXS

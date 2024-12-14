@@ -5,11 +5,11 @@ import { Template } from "./template";
 
 import type { IOptions } from "./index";
 
-// const PACKAGE_NAME = "@tarojs/tttt";
-const PACKAGE_NAME = "@tarojs/plugin-platform-weapp";
+const PACKAGE_NAME = "@tarojs/tttt";
+// const PACKAGE_NAME = "@tarojs/plugin-platform-weapp";
 
 export default class Tuya extends TaroPlatformBase {
-  template: Template;
+  template;
   platform = "ty";
   globalObject = "ty";
   projectConfigJson: string = "project.tuya.json";
