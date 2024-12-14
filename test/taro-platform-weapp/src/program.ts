@@ -9,7 +9,7 @@ const PACKAGE_NAME = "@tarojs/tttt";
 // const PACKAGE_NAME = "@tarojs/plugin-platform-weapp";
 
 export default class Weapp extends TaroPlatformBase {
-  template: Template;
+  template;
   platform = "weapp";
   globalObject = "wx";
   projectConfigJson: string = "project.tuya.json";
