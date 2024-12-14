@@ -1,5 +1,5 @@
 // For React.createElement's type
-// export * from "@tarojs/components";
+// export * from "@tarojs/components/mini";
 // 不知道为什么这里的内容无法获取导致缺失部分Template组件
 export const View = "view";
 export const Icon = "icon";
